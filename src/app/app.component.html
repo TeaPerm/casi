@@ -1,8 +1,4 @@
-
-
-<div style="text-align:center">
-  <h1>My Custom Angular Page</h1>
-  <p>Welcome to the new default homepage!</p>
-  <button hlmBtn>Button</button>
-
+<app-header *ngIf="!hideHeader"/>
+<div class="bg-background text-white">
+  <router-outlet />
 </div>
