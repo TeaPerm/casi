@@ -3,15 +3,15 @@
     <div>
       <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">Sign in to your account</h2>
     </div>
-    <form class="space-y-6" action="#" method="POST">
+    <form class="space-y-6" (ngSubmit)="onSubmit()">
       <div class="relative -space-y-px rounded-md shadow-sm">
         <div>
           <label for="email-address" class="sr-only">Email address</label>
-          <input hlmInput id="email-address" name="email" type="email" autocomplete="email" required class="w-full" placeholder="Email address">
+          <input hlmInput id="email-address" [(ngModel)]="email" name="email" type="email" autocomplete="email" required class="w-full" placeholder="Email address">
         </div>
         <div>
           <label for="password" class="sr-only">Password</label>
-          <input hlmInput id="password" name="password" type="password" autocomplete="current-password" required class="w-full" placeholder="Password">
+          <input hlmInput id="password" name="password" [(ngModel)]="password" type="password" autocomplete="current-password" required class="w-full" placeholder="Password">
         </div>
       </div>
 
