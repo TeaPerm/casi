@@ -13,7 +13,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css'],
 })
-export class AppComponent implements OnInit {
+export class AppComponent {
 
   title = 'casi';
   hideHeader: boolean = false;
@@ -24,22 +24,5 @@ export class AppComponent implements OnInit {
       const noHeaderRoutes = ['/register'];
       this.hideHeader = noHeaderRoutes.includes(this.router.url);
     });
-  }
-
-  ngOnInit() {
-    this.getData();
-  }
-
-  // Fetch data and log to console
-  getData() {
-    this.apiService.getData('').subscribe(
-      (response) => {
-        console.log('Data received:', response);  // Logs the API response to the console
-        this.data = response;  // Store the data in the component's property
-      },
-      (error) => {
-        console.error('Error:', error);  // Log any errors to the console
-      }
-    );
   }
 }
