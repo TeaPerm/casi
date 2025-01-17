@@ -38,4 +38,9 @@ export class ApiService {
     const body = { email, password };
     return this.http.post(this.baseUrl+"/auth/login", body);
   }
+
+  register(email: string, username: string, password: string): Observable<any> {
+    const body = { email, username, password };
+    return this.http.post(this.baseUrl+"/auth/signup", body);
+  }
 }

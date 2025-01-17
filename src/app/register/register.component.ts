@@ -4,11 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { ApiService } from '../services/api.service';
 import { Router } from '@angular/router';
 import { registerResponse } from '../types/user-types';
+import { LogoComponent } from '../shared/logo/logo.component';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ SharedModule , FormsModule],
+  imports: [ SharedModule , FormsModule, LogoComponent],
   templateUrl: './register.component.html',
   styleUrl: './register.component.css'
 })
@@ -21,13 +22,9 @@ export class RegisterComponent {
   constructor(private apiService: ApiService, private router: Router) { }
 
   onSubmit(): void {
-    this.apiService.login(this.email, this.password).subscribe({
+    this.apiService.register(this.email, this.username, this.password).subscribe({
       next: (response: registerResponse) => {
-        console.log('Login successful', response);
-
-        setTimeout(() => {
-          location.reload()}, 0
-        )
+        console.log('register successful', response);
         this.router.navigate(['/'])
       },
       error: (error) => {

@@ -1,28 +1,60 @@
-<div class="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8 text-secondary">
+<div
+  class="flex min-h-full items-center justify-center px-4 py-12 sm:px-6 lg:px-8 text-secondary"
+>
   <div class="w-full max-w-sm space-y-10">
     <div>
-      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">Sign in to your account</h2>
+      <h2 class="mt-10 text-center text-2xl font-bold leading-9 tracking-tight">
+        Sign in to your account
+      </h2>
     </div>
     <form class="space-y-6" (ngSubmit)="onSubmit()">
       <div class="relative -space-y-px rounded-md shadow-sm">
         <div>
           <label for="email-address" class="sr-only">Email address</label>
-          <input hlmInput id="email-address" [(ngModel)]="email" name="email" type="email" autocomplete="email" required class="w-full" placeholder="Email address">
+          <input
+            hlmInput
+            id="email-address"
+            [(ngModel)]="email"
+            name="email"
+            type="email"
+            autocomplete="email"
+            required
+            class="w-full"
+            placeholder="Email address"
+          />
         </div>
         <div>
           <label for="password" class="sr-only">Password</label>
-          <input hlmInput id="password" name="password" [(ngModel)]="password" type="password" autocomplete="current-password" required class="w-full" placeholder="Password">
+          <input
+            hlmInput
+            id="password"
+            name="password"
+            [(ngModel)]="password"
+            type="password"
+            autocomplete="current-password"
+            required
+            class="w-full"
+            placeholder="Password"
+          />
         </div>
       </div>
 
       <div>
-        <button hlmBtn type="submit" class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">Sign in</button>
+        <button
+          hlmBtn
+          type="submit"
+          class="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Sign in
+        </button>
       </div>
     </form>
 
     <p class="text-center text-sm leading-6">
       Not a member?
-      <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500">Join Us!</a>
+      <a href="#" class="font-semibold text-indigo-600 hover:text-indigo-500"
+        >Join Us!</a
+      >
     </p>
   </div>
 </div>
