@@ -1,0 +1,49 @@
+<div class="h-screen">
+  <div style="display: flex; gap: 20px;">
+    <p>Selected: {{ selected }}</p>
+    <input hlmBtn type="button" value="spin" id="spin" (click)="spin()" />
+    <canvas #canvas id="canvas" [width]="size" [height]="size"></canvas>
+    
+        <!-- Jobb oldalt: fogadó tábla -->
+        <div>
+          <div style="margin-bottom: 10px;">
+            <span *ngFor="let c of chipValues" style="margin-right:8px;">
+              <button (click)="selectedChipValue = c"
+                      [style.fontWeight]="selectedChipValue === c ? 'bold' : 'normal'">
+                {{ c }}$
+              </button>
+            </span>
+          </div>
+    
+          <!-- Példa tábla, 0 + 3x12 + "red"/"black" cellák -->
+          <div style="margin-bottom: 10px;">
+            <div (click)="onCellClick('0','number')"
+                 [style.backgroundColor]="getRouletteColor('0')"
+                 style="width:50px; height:50px; text-align:center; line-height:50px; color:#fff; cursor:pointer;"
+            >0</div>
+          </div>
+          <div>
+            <div *ngFor="let row of chunks3" style="display:flex;">
+              <div *ngFor="let value of row"
+                   (click)="onCellClick(value,'number')"
+                   [style.backgroundColor]="getRouletteColor(value)"
+                   style="width:50px; height:50px; text-align:center; line-height:50px; color:#fff; margin:2px; cursor:pointer;"
+              >
+                {{ value }}
+              </div>
+            </div>
+          </div>
+          <!-- Piros/fekete mező, ha valaki csak színre tenne -->
+          <div style="margin-top:10px; display:flex; gap:4px;">
+            <div (click)="onCellClick('red','color')"
+                 style="background-color:red; width:50px; height:50px; text-align:center; line-height:50px; color:#fff; cursor:pointer;">
+              RED
+            </div>
+            <div (click)="onCellClick('black','color')"
+                 style="background-color:black; width:50px; height:50px; text-align:center; line-height:50px; color:#fff; cursor:pointer;">
+              BLACK
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

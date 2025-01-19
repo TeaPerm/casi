@@ -4,7 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { BlackjackComponent } from './blackjack/blackjack.component';
-import { RoomComponent } from './blackjack/room/room.component';
+import { RouletteComponent } from './roulette/roulette.component';
 
 
 export const routes: Routes = [
@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'blackjack', component: BlackjackComponent },
-  { path: 'blackjack/:roomNumber', component: RoomComponent },
+  { path: 'roulette', component: RouletteComponent },
 ];
 
 @NgModule({
