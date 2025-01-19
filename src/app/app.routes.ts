@@ -4,6 +4,7 @@ import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { IndexComponent } from './index/index.component';
 import { BlackjackComponent } from './blackjack/blackjack.component';
+import { RouletteComponent } from './roulette/roulette.component';
 
 
 export const routes: Routes = [
@@ -11,6 +12,7 @@ export const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'login', component: LoginComponent },
   { path: 'blackjack', component: BlackjackComponent },
+  { path: 'roulette', component: RouletteComponent },
 ];
 
 @NgModule({
