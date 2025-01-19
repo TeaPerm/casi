@@ -1,0 +1,30 @@
+<div *ngIf="gameStarted">
+  <div *ngIf="getGameStatus()" class="mt-4">
+    <p>{{ gameResult }}</p>
+  </div>
+  <div class="mt-2 border-b-2 border-white">
+    <div hlmBadge class="items-center flex w-10">
+      <p class="flex justify-center w-full">
+        {{ getHandValue(dealerHand) }}
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <div *ngFor="let card of dealerHand">
+        <img class="" [src]="'/' + card + '.png'" />
+      </div>
+      <img *ngIf="showHiddenCard" src="/hidden.png" />
+    </div>
+  </div>
+  <div class="mt-4">
+    <div class="items-center flex justify-end w-full">
+      <p hlmBadge class="flex justify-center bg-blue-500">
+        {{ getHandValue(playerHand) }}
+      </p>
+    </div>
+    <div class="flex justify-center">
+      <div *ngFor="let card of playerHand">
+        <img [src]="'/' + card + '.png'" />
+      </div>
+    </div>
+  </div>
+</div>

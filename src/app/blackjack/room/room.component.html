@@ -1,0 +1,15 @@
+<div class="text-center h-screen flex">
+  <div class="min-w-64">
+    <app-placebets
+      (gameStarted)="gameComponent.startGame()"
+      (gameStarted)="startGame()"
+      (hitEvent)="gameComponent.hit()"
+      (standEvent)="gameComponent.stand()"
+      (isGameOver)="gameComponent.isGameOver"
+    >
+    </app-placebets>
+  </div>
+  <div class="flex justify-center w-full">
+    <app-game #gameComponent></app-game>
+  </div>
+</div>

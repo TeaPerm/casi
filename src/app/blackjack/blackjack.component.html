@@ -1,6 +1,21 @@
-<div class="h-full">
-  <div *ngFor="let imageName of imageNames">
-    <!-- <img [src]="'/src/assets/images/' + imageName" /> -->
-    <img src="/assets/images/c10.png"/>
+<div class="px-6 py-12 lg:px-8" *ngIf="!roomNumber">
+  <div class="mx-auto max-w-2xl text-center">
+    <p class="text-base/7 font-semibold">Lock In</p>
+    <h2 class="mt-2 text-5xl font-semibold tracking-tight sm:text-7xl">
+      Blackjack room
+    </h2>
+    <button hlmBtn class="mt-6" (click)="createRoom()">Create Room</button>
   </div>
+  <div class="flex flex-row gap-2 items-center">
+    <div class="flex-1 border-b border-white"></div>
+    <span>or</span>
+    <div class="flex-1 border-b border-white"></div>
+  </div>
+  <input
+    hlmInput
+    class="flex justify-center mt-6 text-white"
+    placeholder="Enter room code"
+    [(ngModel)]="enteredRoomCode"
+  />
+  <button hlmBtn class="mt-6" (click)="joinRoom()">Join Room</button>
 </div>

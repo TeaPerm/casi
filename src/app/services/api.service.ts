@@ -8,6 +8,8 @@ import { Observable } from 'rxjs';
 export class ApiService {
   private baseUrl = 'http://localhost:8000/api';
 
+  //admin123@gmail.com | admin123
+
   setTokens(aToken: string,rToken: string): void {
     localStorage.setItem('accessToken', aToken);
     localStorage.setItem('refreshToken', rToken);
@@ -41,6 +43,7 @@ export class ApiService {
 
   register(email: string, username: string, password: string): Observable<any> {
     const body = { email, username, password };
+    console.log("asd")
     return this.http.post(this.baseUrl+"/auth/signup", body);
   }
 }

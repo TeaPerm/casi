@@ -5,6 +5,7 @@ import { LogoComponent } from "../logo/logo.component";
 import { CommonModule } from '@angular/common';
 import { ApiService } from '../../services/api.service';
 import { userDetailsResponse } from '../../types/user-types';
+import { CreditService } from '../../services/credit.service';
 
 @Component({
   selector: 'app-header',
@@ -19,7 +20,7 @@ export class HeaderComponent implements OnInit {
   username: string | null = null;
   credit: number | null = null;
 
-  constructor(private apiService: ApiService, private router: Router) {}
+  constructor(private apiService: ApiService, private router: Router, private creditService: CreditService) {}
 
   ngOnInit(): void {
     this.accessToken= this.apiService.getTokens().aToken;
@@ -29,6 +30,7 @@ export class HeaderComponent implements OnInit {
         const {name, credit,email} = response;
         this.username = name;
         this.credit = credit;
+        this.creditService.setCredit(credit); // Set the credit value in the service
       },
       error: (error) => {
         console.error('Login failed', error);

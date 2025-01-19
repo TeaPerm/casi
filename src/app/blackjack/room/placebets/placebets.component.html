@@ -1,0 +1,65 @@
+<div class="h-full bg-slate-700 p-2">
+  <div class="flex justify-between">
+    <p class="">Bet Amount</p>
+    <p class="">{{ betAmount }}</p>
+  </div>
+  <div class="mt-4 flex w-full space-x-1">
+    <input
+      hlmInput
+      [(ngModel)]="betAmount"
+      [disabled]="!getIsGameOver()"
+      type="number"
+      class="text-white w-full"
+    />
+    <button
+      hlmBtn
+      class="w-12"
+      (click)="changeBet(betAmount / 2)"
+      [disabled]="!getIsGameOver()"
+    >
+      1/2
+    </button>
+    <button
+      hlmBtn
+      class="w-12"
+      (click)="changeBet(betAmount * 2)"
+      [disabled]="!getIsGameOver()"
+    >
+      2x
+    </button>
+  </div>
+  <div class="flex justify-center space-x-3 my-3"></div>
+  <div class="flex justify-center space-x-3 my-3">
+    <button hlmBtn class="w-full" (click)="hit()" [disabled]="getIsGameOver()">
+      Hit
+    </button>
+    <button
+      hlmBtn
+      class="w-full"
+      (click)="stand()"
+      [disabled]="getIsGameOver() || standDisabled"
+    >
+      Stand
+    </button>
+  </div>
+  <div class="flex justify-center space-x-3">
+    <button hlmBtn class="w-full" [disabled]="getIsGameOver()">Split</button>
+    <button hlmBtn class="w-full" [disabled]="getIsGameOver()">Double</button>
+  </div>
+  <div class="mt-4 mb-8">
+    <button
+      hlmBtn
+      class="w-full bg-green-600 hover:bg-green-600/80"
+      (click)="placeBet()"
+      [disabled]="!getIsGameOver()"
+    >
+      Bet
+    </button>
+  </div>
+  <div class="bg-slate-500 rounded-sm flex justify-center items-center p-2">
+    <p class="uppercase">The dealer must stand on 17 and above</p>
+  </div>
+  <div class="bg-slate-500 rounded-sm flex justify-center items-center p-2 mt-4">
+    <p class="uppercase">Blackjack pays 3 to 1</p>
+  </div>
+</div>
